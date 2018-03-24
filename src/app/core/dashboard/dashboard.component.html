@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col-sm-2">
+    <div class="card" style="width: 8.6em">
+      <img class="card-img-top" src="https://randomuser.me/api/portraits/women/11.jpg" alt="Card image cap">
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card" style="width: 19em">
+      <div class="card-body">
+        <h4 class="card-title">@usuário blablablablabla</h4>
+        <h5 class="card-text" [hidden]="verSenha.checked">*********</h5>
+        <h5 class="card-text" [hidden]="!verSenha.checked">123456</h5>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="verSenha" #verSenha>
+          <label class="form-check-label" for="verSenha">Mostrar senha</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="row mt-2">
+
+  <div class="col-md-2">
+    <div class="form-group">
+      <i class="fa fa-instagram"></i>
+      <label for="conta">Contas do Instagram</label>
+      <select class="form-control" id="conta">
+        <option *ngFor="let conta of contas">{{ conta.usuario }}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="col-md-2">
+    <label>Iniciar ou parar o serviço</label>
+    <div class="form-group">
+      <div class="btn-group" btnRadioGroup formControlName="radio">
+        <label btnRadio="iniciar" class="btn btn-primary">Iniciar</label>
+        <label btnRadio="parar" class="btn btn-primary">Parar</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <label>Ações</label>
+    <div class="form-group">
+      <label btnRadio="seguir" class="btn btn-primary">Seguir</label>
+      <label btnRadio="naoSeguir" class="btn btn-primary">Deixar de Seguir</label>
+      <label btnRadio="curtir" class="btn btn-primary">Curtir</label>
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+    <p-chart type="line" [data]="qtdeSeguidores"></p-chart>
+  </div>
+</div>
